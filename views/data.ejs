@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Hello, world!</title>
+</head>
+<body class="container">
+<% include nav %>
+<% for (var i = 0; i <duLieu.length;i++ ) {%>
+
+
+                <div class="card-body">
+                    <p class="card-text">Ten anh: <%= duLieu[i].tenanh %></p>
+                    <p class="card-text">noi dung: <%= duLieu[i].noidung %></p>
+                    <img src="<%= duLieu[i].myimg %>" class="img-thumbnail" >
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a class="button" href="/delete/<%= duLieu[i]._id %>">Delete</a>
+                            <a class="button" href="/edit/<%= duLieu[i]._id %>">Update</a>
+                            <a class="button" href="/show/<%= duLieu[i]._id %>">Show</a>
+                        </div>
+
+                    </div>
+                </div>
+
+<%}%>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
